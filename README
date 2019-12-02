@@ -1,0 +1,77 @@
+Fazer Instalação Virtual Box 5.2.2 (https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
+
+Fazer Instalação do mininet VM (https://github.com/mininet/mininet/releases)
+
+Configurar novo Host Network Manager.. no virtual box:	https://www.youtube.com/watch?v=TGmh6ppSS3M
+	Criar novo hospedeiro (necessário se estiver limpo ou se ja existia um ligado a outra maquina virtual)
+	Ativar servidor dhcp do novo hospedeiro
+
+Clicar com botão direito em cima da imagem do mininet e ir em configurações, depois ir na aba redes, aba adaptador 2, habilita placa de rede e escolher placa de rede exclusiva de hospedeiro (HostOnly - ultimo número adicionado)
+
+
+*Iniciar imagem do mininet pelo virtual*
+------ VM mininet-------
+	login: mininet
+	password: mininet
+	$ sudo su
+	$ apt-get install unzip
+
+	$ sudo dhclient eth1 # habilita ssh
+
+	$ nano etc/network/interfaces
+		add: 
+			auto eth0
+			iface eth0 inet dhcp
+			
+			auto eth1
+			iface eth1 inet dhcp
+    * Ctrl + O para salvar, Enter e Ctrl+X para sair
+    
+    -- clonar do github no mininet --
+    
+    $ sudo apt-get install git-all -y
+    $ git clone https://github.com/gustavocrod/maxbot
+    $ cd /home/mininet
+    
+    OU
+    
+    -- passar via FTP --
+	
+	* ssh pelo terminal da maquina host (Linux Debian Based):*
+	|	$ ssh -X mininet@IP_MININET
+	|	password: mininet
+	|	yes
+	|
+	|	$ cd path/to/archives/
+	|	pscp -scp arquivos.zip mininet@IP_MININET:~    # precisa do putty-tools
+
+	$ cd /home/mininet
+	$ unzip arquivos.zip
+    
+    sudo apt-get update
+    
+    ------
+	
+	*continuando*
+	$ sudo apt-get install python3-pip -y
+	
+	$ cd maxbot-master
+	$ sudo pip3 install -r requirements.txt
+
+	$ sudo apt-get update && sudo apt-get install xinit flwm -y
+
+	opcional:
+		startx (para acessar interfaces)
+    
+    cd ..
+	executar topologia:
+		~$ sudo python topologiaTrabalho.py
+    
+
+
+
+
+
+
+
+
