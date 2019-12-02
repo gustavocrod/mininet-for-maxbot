@@ -105,9 +105,9 @@ O mininet inicializará e então poderá executar o servidor do max na rede virt
 ``` bash
 mininet> xterm cliente02
 mininet> xterm cliente01
-``` bash
+```
 
-No terminal do clienteo2 execute:
+No terminal do cliente02 execute:
 ``` bash
 $ bash run_server.sh
 ```
