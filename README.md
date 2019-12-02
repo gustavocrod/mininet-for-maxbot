@@ -15,6 +15,7 @@
 	Ativar servidor dhcp do novo hospedeiro
 
 4 - Clicar com botão direito em cima da imagem do mininet
+
 	4.1 - ir em configurações
 	
 	4.2 - aba redes
@@ -27,7 +28,7 @@
 
 5 - Iniciar a maquina virtual com o mininet
 
-### VM mininet
+###### Login VM mininet
 login: mininet
 password: mininet
 
@@ -35,16 +36,16 @@ Execute em root:
 ``` bash
 $ sudo su
 ```
-#### Configurar o ssh na VM
+###### Configurar o ssh no VM mininet
 ``` bash
 $ sudo dhclient eth1 # habilita ssh
 ```
-#### Habilitar servidor dchp nas interfaces de rede
+###### Habilitar servidor dchp nas interfaces de rede do VM mininet
 
 ``` bash
 $ nano etc/network/interfaces
 ```
-Adicionar no arquivo 
+Adicionar o seguinte trecho no arquivo interfaces
 ``` bash
 			auto eth0
 			iface eth0 inet dhcp
@@ -57,7 +58,7 @@ Adicionar no arquivo
 #### clonar do github na VM mininet
 ``` bash
     $ sudo apt-get install git-all -y
-    $ git clone https://github.com/gustavocrod/mininet-to-maxbot
+    $ git clone https://github.com/gustavocrod/mininet-for-maxbot
     $ cd /home/mininet
 ```    
 #### Pode transferir via FTP [opcional]
