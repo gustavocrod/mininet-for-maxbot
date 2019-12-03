@@ -87,22 +87,22 @@ def weather(argument):
         js = '{' + js  # readiciona uma { no inicio da string q eh o json
         tempo = json.loads(js)
 
-        status = tempo['weather'][0]['description']     # recebe descrição do tempo em inglês dentro do dict 'tempo'
+        status = tempo['weather'][0]['description']     # recebe descricao do tempo em ingles dentro do dict 'tempo'
         qChuva = 0
         if tempo['weather'][0]['main'] == "Rain" and 'rain' in tempo:   # verifica se existe palavra no dict 'tempo' e busca quantidade de chuva
             qChuva = list(tempo['rain'].values())[0]    #quantidade de chuva previsto
 
         print("[LOG] Traduzindo...")
-        params = dict(key=API_T, text=status, lang='en-pt')     #parametros para requisição com API de tradução
-        res = requests.get(urlt, params=params)     #busca com uma API a tradução da previsão do tempo, retornando um json
+        params = dict(key=API_T, text=status, lang='en-pt')     #parametros para requisicao com API de traducao
+        res = requests.get(urlt, params=params)     #busca com uma API a traducao da previsão do tempo, retornando um json
         jsonT = res.json()      # transforma para dict o json recebido da API
         status = str(jsonT['text'][0])  #pega string traduzida da API
 
-        #variavel com todas as informações atuais do tempo
-        answer = "[FORECAST] Cidade " + argument + "\nStatus atual: " + status + "\nPrevisão de chuva: " + str(
+        #variavel com todas as informacoes atuais do tempo
+        answer = "[FORECAST] Cidade " + argument + "\nStatus atual: " + status + "\nPrevisao de chuva: " + str(
             qChuva) + "mm\nTemperatura atual: " + str(
-            round((float(tempo['main']['temp'])) - 273.15)) + "°C\nUmidade em " + str(
-            tempo['main']['humidity']) + "%\nVelocidade do vento em " + str(
+            round((float(tempo['main']['temp'])) - 273.15)) + "oC\nUmidade em " + str(
+            tempo['main']['humidity']) + "porcento\nVelocidade do vento em " + str(
             round((float(tempo['wind']['speed'])) * 3.6)) + " km/h"
     else:
         answer = "[ERROR] Comando \weather necessita de uma localizacao. Digite \help para saber mais"
