@@ -38,7 +38,7 @@ def start_topology():
         net.start()
 
         print "*** Rede Iniciada ***"
-        CLI( NET )      # inicia rede com todas as configuracoes setadas
+        CLI( net )      # inicia rede com todas as configuracoes setadas
 
         print "*** Rede finalizada ***"
         net.stop()      # finaliza rede
