@@ -4,7 +4,7 @@ from mininet.cli import CLI
 from mininet.log import setLogLevel
 from mininet.link import Link, TCLink
 from mininet.nodelib import NAT
-from mininet.topo import TOpo
+from mininet.topo import Topo
 
 NAT_IP = '10.0.3.2'
             
