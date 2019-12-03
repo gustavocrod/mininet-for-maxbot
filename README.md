@@ -101,12 +101,12 @@ $ sudo apt-get update && sudo apt-get install xinit flwm -y
 
 #### Execução da topologia sem nat (via ssh)
 ``` bash
-$ sudo python start_topology.py
+$ sudo python start_mininet.py
 ```
 
 #### Execução da topologia com nat (via ssh)
 ``` bash
-$ sudo python start_nat_topology.py
+$ sudo python start_nat_mininet.py
 ```
 ###### O mininet inicializará e então poderá executar o servidor do max na rede virtualizada
 
