@@ -19,7 +19,7 @@ class InternetTopo(Topo):
         # configuracao das redes internas
         for i in irange(1, n):
             internetIface = 'nat%d-eth0' % i
-            locaIface = 'nat%d-eth1' % i
+            localIface = 'nat%d-eth1' % i
             localIP = '192.168.%d.1' % i
             localSubnet = '192.168.%d.0/24' % i
             natParams = { 'ip' : '%s/24' % localIP }
