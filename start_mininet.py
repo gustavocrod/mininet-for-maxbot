@@ -150,8 +150,12 @@ def start_topology():
         # rotas do roteador3 para chegar nos destinos:
         add_routes_router3()
 
+        # configuracao da nat
+        NET.addNAT().configDefault()
+        NET.start()
+        
         print "*** Rede Iniciada ***"
-        CLI( net )      # inicia rede com todas as configuracoes setadas
+        CLI( NET )      # inicia rede com todas as configuracoes setadas
 
         print "*** Rede finalizada ***"
         net.stop()      # finaliza rede
