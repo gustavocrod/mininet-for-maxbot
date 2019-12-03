@@ -4,6 +4,8 @@
 
 ![Topologia](images/topologia.png)
 
+---
+
 ### Instalação do mininet
 
 1 - Fazer Instalação Virtual Box 5.2.2 (https://www.virtualbox.org/wiki/Download_Old_Builds_5_2)
