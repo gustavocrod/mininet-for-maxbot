@@ -6,9 +6,6 @@ from mininet.link import Link, TCLink
 
 NET = Mininet( controller=RemoteController, link=TCLink, switch=OVSKernelSwitch )
 # configuracao da nat
-NET.addNAT().configDefault()
-NET.start()
-
 
 def init_clients():
         
