@@ -168,7 +168,7 @@ def start_topology():
         client3 = add_routes_client3(client3)
 
         # configuracoes roteador3-
-        router3 = config_router3router3
+        router3 = config_router3(router3)
 
         # rotas do roteador3 para chegar nos destinos:
         router3 = add_routes_router3(router3)
