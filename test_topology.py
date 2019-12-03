@@ -28,7 +28,7 @@ class InternetTopo(Topo):
             nat = self.addNode('nat%d' % i, cls=NAT, subnet=localSubnet,
                                inetIntf=internetIface, localIntf=localIface)
                                
-            router = self.addSwitch('s%d' % i)
+            router = self.addSwitch('roteador%d' % i)
             # conecta NAT na internet e nos switches (roteadores) locais
             self.addLink(nat, internetRouter, intfName1=internetIface)
             self.addLink(nat, router, intfName1=localIface, params1=natParams)
