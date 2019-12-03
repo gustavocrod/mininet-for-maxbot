@@ -1,8 +1,8 @@
-# Tutorial
-
 ## Topologia
 
-![Topologia](images/topologia.png)
+![Topologia1](images/topologia.png)
+
+![Topologia2](images/topologia2.png)
 
 ---
 
@@ -98,9 +98,14 @@ $ sudo apt-get update && sudo apt-get install xinit flwm -y
 	opcional:
 		startx (para acessar interfaces)
 
-#### Execução da topologia (via ssh)
+#### Execução da topologia sem nat (via ssh)
 ``` bash
 $ sudo python start_topology.py
+```
+
+#### Execução da topologia com nat (via ssh)
+``` bash
+$ sudo python start_nat_topology.py
 ```
 ###### O mininet inicializará e então poderá executar o servidor do max na rede virtualizada
 
