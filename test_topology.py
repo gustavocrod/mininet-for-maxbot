@@ -13,8 +13,8 @@ class InternetTopo(Topo):
         # config do switch q conecta com o externo
         internetRouter = self.addSwitch('roteador0')
         # config do client q conecta com o externo
-        internettHost = self.addHost('cliente01')
-        self.addLink(internetRouter, internetHost)
+        internetClient = self.addHost('cliente01')
+        self.addLink(internetRouter, internetClient)
 
         # configuracao das redes internas
         for i in irange(1, n):
