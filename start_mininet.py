@@ -130,13 +130,13 @@ def start_topology():
         router1, router2, router3 = init_routers()
 
         # Adiciona enlaces entre os roteadores
-        NET.addLink( roteador1, roteador2 )
-        NET.addLink( roteador2, roteador3 )
+        NET.addLink( router1, router2 )
+        NET.addLink( router2, router3 )
 
         #Adiciona enlaces entre hosts e roteadores
-        NET.addLink( cliente01, roteador1 )
-        NET.addLink( cliente02, roteador2 )
-        NET.addLink( cliente03, roteador3 )
+        NET.addLink( client1, router1 )
+        NET.addLink( client2, router2 )
+        NET.addLink( client3, router3 )
 
         NET.build()
 
