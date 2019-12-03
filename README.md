@@ -123,7 +123,7 @@ $ bash run_client.sh
 
 ## MAX
 
-Veja a documentação do max clicando [aqui](../gustavocrod/maxbot)
+Veja a documentação do max clicando [aqui](https://github.com/gustavocrod/maxbot)
 
 
 
