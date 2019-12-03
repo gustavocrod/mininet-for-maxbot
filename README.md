@@ -1,8 +1,8 @@
-## Topologia 1
+## Topologia com roteador
 
 ![Topologia1](images/topologia.png)
 
-## Topologia 2
+## Topologia com switch
 ![Topologia2](images/topologia2.png)
 
 ---
@@ -99,12 +99,12 @@ $ sudo apt-get update && sudo apt-get install xinit flwm -y
 	opcional:
 		startx (para acessar interfaces)
 
-#### Execução da topologia sem nat (via ssh)
+#### Execução da topologia com roteador (via ssh) [ainda nao funciona nat]
 ``` bash
 $ sudo python start_mininet.py
 ```
 
-#### Execução da topologia com nat (via ssh)
+#### Execução da topologia com switch (via ssh)
 ``` bash
 $ sudo python start_nat_mininet.py
 ```
