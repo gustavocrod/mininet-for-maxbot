@@ -107,8 +107,7 @@ $ sudo python start_topology.py
 #### Execução do MAX bot
 
 ``` bash
-mininet> xterm cliente02
-mininet> xterm cliente01
+mininet> xterm cliente02 cliente01
 ```
 
 ###### No terminal do cliente02 execute:
