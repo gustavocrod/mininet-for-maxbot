@@ -12,8 +12,8 @@ class MiniTopo(Topo):
 
         ##### inicializacao dos hots #####
         
-        client1 = self.addHost( 'cliente01', ip='10.0.1.2/24', defaultRoute='via ' + NAT_IP )   #host cliente chatBot
-        client2 = self.addHost( 'cliente02', ip='10.0.2.2/24', defaultRoute='via ' + NAT_IP )   #host servidor chatBot
+        client1 = self.addHost( 'cliente01', defaultRoute='via ' + NAT_IP )   #host cliente chatBot
+        client2 = self.addHost( 'cliente02', defaultRoute='via ' + NAT_IP )   #host servidor chatBot
         client3 = self.addNode( 'cliente03', cls=NAT, ip=NAT_IP + '/24', inNamespace=False ) # configuracao da nat
  
         ##### Configracao dos switchs (roteadores) #####
