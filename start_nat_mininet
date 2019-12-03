@@ -1,0 +1,59 @@
+from mininet.net import Mininet
+from mininet.node import Controller, RemoteController, OVSKernelSwitch, UserSwitch
+from mininet.cli import CLI
+from mininet.log import setLogLevel
+from mininet.link import Link, TCLink
+
+NET = Mininet( controller=RemoteController, link=TCLink, switch=OVSKernelSwitch )
+
+NAT_IP = 10.0.3.2
+            
+def init_nat():
+      # Define a nat e adiciona no net
+      return NET.addNode( 'cliente03', cls=NAT, ip=NAT_IP, inNamespace=False )
+
+def init_clients():
+        
+        cliente01 = NET.addHost( 'cliente01', ip='10.0.1.2', defaultRoute='via ' + NAT_IP )   #host cliente chatBot
+        cliente02 = NET.addHost( 'cliente02', ip='10.0.2.2', defaultRoute='via ' + NAT_IP )   #host servidor chatBot
+        
+        return cliente01, cliente02
+        
+def init_routers():
+
+        roteador1 = NET.addSwitch( 'roteador1' )
+        roteador2 = NET.addSwitch( 'roteador2' )
+        roteador3 = NET.addSwitch( 'roteador3' )
+        
+        return roteador1, roteador2, roteador3
+        
+def start_topology():
+        # Adiciona as nat
+        nat = init_nat()
+
+        # Adiciona hosts
+        client1, client2 = init_clients()
+
+        # Adiciona os roteadores (switchs na verdade)
+        router1, router2, router3 = init_routers()
+
+        # Adiciona enlaces entre os roteadores
+        NET.addLink( router1, router2 )
+        NET.addLink( router2, router3 )
+
+        #Adiciona enlaces entre hosts e roteadores
+        NET.addLink( client1, router1 )
+        NET.addLink( client2, router2 )
+        NET.addLink( client3, router3 )
+
+        NET.build()
+
+        print "*** Rede Iniciada ***"
+        CLI( NET )      # inicia rede com todas as configuracoes setadas
+
+        print "*** Rede finalizada ***"
+        net.stop()      # finaliza rede
+
+if __name__ == '__main__':
+    setLogLevel( 'info' )
+    start_topology() 
