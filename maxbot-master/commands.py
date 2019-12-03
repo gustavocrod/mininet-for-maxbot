@@ -70,7 +70,7 @@ def weather(argument):
     :return: condicao climatica atual da localizacao ou uma mensagem de erro caso a cidade nao tenha sido informada
     """
     if argument != "":
-        print("[LOG] Pesquisando previsão...")
+        print("[LOG] Pesquisando previsao...")
 
         sockOpenWeather = socket.socket(socket.AF_INET,
                                         socket.SOCK_STREAM)  # abre conexao com o servidor do Openweather
@@ -120,7 +120,7 @@ def weatherWeek(argument):
         print("[LOG] Cidade " + argument + " recebida do cliente e ")
         city = urllib.parse.quote(str(argument))  # transforma string da cidade para formato URL p/ API reconhecer
         print("transformada para " + str(city) + " no formato URLs!")
-        print("[LOG] Pesquisando previsão...")
+        print("[LOG] Pesquisando previsao...")
 
         sockAccuWeather = socket.socket(socket.AF_INET,
                                         socket.SOCK_STREAM)  # abre conexao TCP com o servidor do AccuWeather
@@ -228,14 +228,14 @@ def weatherWeek(argument):
 
             # resposta de cada dia que retorna para resposta prncipal dessa função
             resp = resp + ("\n-----------\nData: " + diaData[8:10] + "/" + diaData[5:7] + "/" + diaData[0:4] +
-                           "\nTemperatura mínima: " + str(tempMin) + "\nTemperatura máxima: " + str(tempMax) +
-                           "\n--Durante o dia:" + "\nPrevisão do tempo: " + statusD + "\nChuva " +
+                           "\nTemperatura minima: " + str(tempMin) + "\nTemperatura maxima: " + str(tempMax) +
+                           "\n--Durante o dia:" + "\nPrevisao do tempo: " + statusD + "\nChuva " +
                            str(qChuvaD) + "mm\nVento " + str(ventoD) +
-                           "km/h\n--Durante a noite:" + "\nPrevisão do tempo: " + statusN + "\nChuva " +
+                           "km/h\n--Durante a noite:" + "\nPrevisao do tempo: " + statusN + "\nChuva " +
                            str(qChuvaN) + "mm\nVento " + str(ventoN) + "km/h")
 
         # resposta principal que retornada para cliente
-        answer = "[FORECAST] Previsão do tempo para " + argument + " durante os próximos dias:\n" + resp
+        answer = "[FORECAST] Previsao do tempo para " + argument + " durante os próximos dias:\n" + resp
 
     else:
         # retorna resposta se cliente deixou em branco o parâmetro de cidade
