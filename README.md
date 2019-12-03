@@ -28,11 +28,11 @@
 
 5 - Iniciar a maquina virtual com o mininet
 
-###### Login VM mininet
+#### Login VM mininet
 login: mininet
 password: mininet
 
-Execute em root:
+###### Execute em root:
 ``` bash
 $ sudo su
 ```
@@ -40,12 +40,21 @@ $ sudo su
 ``` bash
 $ sudo dhclient eth1 # habilita ssh
 ```
-###### Habilitar servidor dchp nas interfaces de rede do VM mininet
+###### Conectar via ssh na VM mininet
+
+``` bash
+$ ssh -X mininet@IP_MININET
+	|	password: mininet
+	|	yes
+```
+## Os passos a seguir podem ser executado na máquina host via ssh para a VM mininet
+
+#### Habilitar servidor dchp nas interfaces de rede do VM mininet
 
 ``` bash
 $ nano etc/network/interfaces
 ```
-Adicionar o seguinte trecho no arquivo interfaces
+###### Adicionar o seguinte trecho no arquivo interfaces
 ``` bash
 			auto eth0
 			iface eth0 inet dhcp
@@ -61,17 +70,11 @@ Adicionar o seguinte trecho no arquivo interfaces
     $ git clone https://github.com/gustavocrod/mininet-for-maxbot
     $ cd /home/mininet
 ```    
-#### Pode transferir via FTP [opcional]
+###### Pode transferir via FTP [opcional]
 
----
 ``` bash
-	* ssh pelo terminal da maquina host (Linux Debian Based):*
-	|	$ ssh -X mininet@IP_MININET
-	|	password: mininet
-	|	yes
-	|
-	|	$ cd path/to/archives/
-	|	pscp -scp arquivos.zip mininet@IP_MININET:~    # precisa do putty-tools
+$ cd path/to/archives/
+$ scp -scp arquivos.zip mininet@IP_MININET:~    # precisa do putty-tools
 
 $ cd /home/mininet
 $ unzip arquivos.zip
@@ -84,7 +87,7 @@ $ sudo apt-get update
 ``` bash
 	$ sudo apt-get install python3-pip -y
 ```
-#### Navegar até a pasta do projeto do max e instalar os requisitos
+###### Navegar até a pasta do projeto do max e instalar os requisitos
 ``` bash
 $ cd mininet-to-maxbot/maxbot-master/
 $ sudo pip3 install -r requirements.txt
@@ -94,12 +97,12 @@ $ sudo apt-get update && sudo apt-get install xinit flwm -y
 	opcional:
 		startx (para acessar interfaces)
 
-## Execução da topologia
+#### Execução da topologia (via ssh)
 ``` bash
 $ cd ..
 $ sudo python start_topology.py
-``` bash
-O mininet inicializará e então poderá executar o servidor do max na rede virtualizada
+```
+###### O mininet inicializará e então poderá executar o servidor do max na rede virtualizada
 
 #### Execução do MAX bot
 
@@ -108,19 +111,19 @@ mininet> xterm cliente02
 mininet> xterm cliente01
 ```
 
-No terminal do cliente02 execute:
+###### No terminal do cliente02 execute:
 ``` bash
 $ bash run_server.sh
 ```
 
-No terminal do cliente01 execute:
+###### No terminal do cliente01 execute:
 ``` bash
 $ bash run_client.sh
 ```
 
+## MAX
 
-
-
+Veja a documentação do max clicando [aqui](../gustavocrod/maxbot)
 
 
 
