@@ -3,6 +3,8 @@ from mininet.node import Controller, RemoteController, OVSKernelSwitch, UserSwit
 from mininet.cli import CLI
 from mininet.log import setLogLevel
 from mininet.link import Link, TCLink
+from mininet.nodelib import NAT
+from mininet.topo import TOpo
 
 NAT_IP = '10.0.3.2'
             
@@ -11,13 +13,13 @@ class MiniTopo():
 
         ##### inicializacao dos hots #####
         
-        cliente01 = self.addHost( 'cliente01', ip='10.0.1.2', defaultRoute='via ' + NAT_IP )   #host cliente chatBot
-        cliente02 = self.addHost( 'cliente02', ip='10.0.2.2', defaultRoute='via ' + NAT_IP )   #host servidor chatBot
-        cliente03 = self.addNode( 'cliente03', cls=NAT, ip=NAT_IP, inNamespace=False ) # configuracao da nat
+        client1 = self.addHost( 'cliente01', ip='10.0.1.2', defaultRoute='via ' + NAT_IP )   #host cliente chatBot
+        client2 = self.addHost( 'cliente02', ip='10.0.2.2', defaultRoute='via ' + NAT_IP )   #host servidor chatBot
+        client3 = self.addNode( 'cliente03', cls=NAT, ip=NAT_IP, inNamespace=False ) # configuracao da nat
         ##### Configracao dos switchs (roteadores) #####
-        roteador1 = self.addSwitch( 'roteador1' )
-        roteador2 = self.addSwitch( 'roteador2' )
-        roteador3 = self.addSwitch( 'roteador3' )
+        router1 = self.addSwitch( 'roteador1' )
+        router2 = self.addSwitch( 'roteador2' )
+        router3 = self.addSwitch( 'roteador3' )
 
         # Adiciona enlaces entre os roteadores
         self.addLink( router1, router2 )
