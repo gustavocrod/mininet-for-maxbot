@@ -70,7 +70,7 @@ $ nano etc/network/interfaces
 ``` bash
     $ sudo apt-get install git-all -y
     $ git clone https://github.com/gustavocrod/mininet-for-maxbot
-    $ cd /home/mininet
+    $ cd mininet-for-maxbot/
 ```    
 ###### Pode transferir via FTP [opcional]
 
