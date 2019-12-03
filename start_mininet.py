@@ -179,7 +179,7 @@ def start_topology():
         CLI( NET )      # inicia rede com todas as configuracoes setadas
 
         print "*** Rede finalizada ***"
-        net.stop()      # finaliza rede
+        NET.stop()      # finaliza rede
 
 if __name__ == '__main__':
     setLogLevel( 'info' )
