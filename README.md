@@ -89,10 +89,9 @@ $ sudo apt-get update
 ``` bash
 	$ sudo apt-get install python3-pip -y
 ```
-###### Navegar até a pasta do projeto do max e instalar os requisitos
+###### Instalar os requisitos
 ``` bash
-$ cd mininet-to-maxbot/maxbot-master/
-$ sudo pip3 install -r requirements.txt
+$ sudo pip3 install -r maxbot-master/requirements.txt
 
 $ sudo apt-get update && sudo apt-get install xinit flwm -y
 ```
@@ -101,7 +100,6 @@ $ sudo apt-get update && sudo apt-get install xinit flwm -y
 
 #### Execução da topologia (via ssh)
 ``` bash
-$ cd ..
 $ sudo python start_topology.py
 ```
 ###### O mininet inicializará e então poderá executar o servidor do max na rede virtualizada
