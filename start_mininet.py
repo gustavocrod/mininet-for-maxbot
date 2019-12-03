@@ -5,6 +5,9 @@ from mininet.log import setLogLevel
 from mininet.link import Link, TCLink
 
 NET = Mininet( controller=RemoteController, link=TCLink, switch=OVSKernelSwitch )
+# configuracao da nat
+NET.addNAT().configDefault()
+NET.start()
 
 
 def init_clients():
@@ -173,9 +176,7 @@ def start_topology():
         # rotas do roteador3 para chegar nos destinos:
         router3 = add_routes_router3(router3)
 
-        # configuracao da nat
-        NET.addNAT().configDefault()
-        NET.start()
+        
         
         print "*** Rede Iniciada ***"
         CLI( NET )      # inicia rede com todas as configuracoes setadas
