@@ -162,4 +162,4 @@ def start_topology():
 
 if __name__ == '__main__':
     setLogLevel( 'info' )
-    iniciaTopologia() 
+    start_topology() 
