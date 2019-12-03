@@ -5,8 +5,9 @@ from mininet.log import setLogLevel
 from mininet.link import Link, TCLink
 from mininet.nodelib import NAT
 from mininet.topo import Topo
+from mininet.util import dumpNodeConnections
             
-class MiniTopo():
+class MiniTopo(Topo):
       def build(self, NAT_IP='10.0.3.2'):  
 
         ##### inicializacao dos hots #####
